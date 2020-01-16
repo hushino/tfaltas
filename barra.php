@@ -1,7 +1,7 @@
 <script type="text/javascript">
 function showNav(el) { el.getElementsByTagName('UL')[0].style.left='auto'; }
 function hideNav(el) { el.getElementsByTagName('UL')[0].style.left='-999em'; }
-</script>
+</script> 
 <?php if (isset($_COOKIE["nombre"])) {
   $usur = $_COOKIE["nombre"];
 } else { $usur = ''; } ?>
