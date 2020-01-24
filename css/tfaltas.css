@@ -7,6 +7,8 @@ html {
 body {
 	font:62.5% "Trebuchet MS",sans-serif;
 	margin:0px;
+	background-color: #2a6ca6 !important;
+	/* background-color: #9d2626 !important; */
 	/*background-color:#999;*/
 }
 
@@ -143,7 +145,7 @@ body {
 }
 
 #contenido {
-	width: 700px;
+	/* width: 700px; */
 	background-color: #FCFCFC;
 	padding: 10px;
 	-moz-border-radius: 12px;
@@ -158,6 +160,7 @@ body {
 	background: linear-gradient(135deg, #FCFCFC 0%,#FCFCFC 70%,#DDD 100%);
 	margin-left: auto;
 	margin-right: auto;
+	/* margin-top: 50px !important; */
 }
 
 #pie {

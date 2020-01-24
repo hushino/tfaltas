@@ -142,97 +142,108 @@ $totalRows_infracc = mysql_num_rows($infracc);
 
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Tribunal de Faltas</title>
-<link href="css/tfaltas.css" rel="stylesheet" type="text/css">
-<link href="css/barra.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-        function showContent() {
-        element = document.getElementById("contoblada");
-        check = document.getElementById("oblada");
-        if (check.checked) {
-            element.style.display='block';
-            $('#obladarec').prop('required',true);
-        }
-        else {
-            element.style.display='none';
-            $('#obladarec').prop('required',false);
-        }
+
+
+  <meta charset="utf-8">
+  <title>Tribunal de Faltas</title>
+  <link href="css/tfaltas.css" rel="stylesheet" type="text/css">
+  <link href="css/barra.css" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript">
+  function showContent() {
+    element = document.getElementById("contoblada");
+    check = document.getElementById("oblada");
+    if (check.checked) {
+      element.style.display = 'block';
+      $('#obladarec').prop('required', true);
+    } else {
+      element.style.display = 'none';
+      $('#obladarec').prop('required', false);
     }
-</script>
+  }
+  </script>
 </head>
 
 <body>
-<?php include('barra.php'); ?>
-<?php //echo 'bx = ' . $query_listadeexptes; ?><br><?php //echo 'ax = ' . $query_limit_listadeexptes; ?><br>
+  <?php include('barra.php'); ?>
+  <?php //echo 'bx = ' . $query_listadeexptes; ?>
+  <?php //echo 'ax = ' . $query_limit_listadeexptes; ?>
 
 
 
-<div id="contenido">Lista de Causas<br>
-  <form action="site.php" method="get"><input name="search" type="search" autofocus autocomplete="off" id="search" placeholder="ingresar algún criterio de busqueda" size="60">   B&uacute;squeda Avanzada <input name="oblada" type="checkbox" id="oblada" title="Marcar si surge pago espontáneo del acta" value="S" onchange="javascript:showContent()"><br>
-  <div id="contoblada" style="display: none; text-align: left; ">
-  Por Secretaria :
-  <select name="filt">
-    <option value="4">todas</option>
-    <option value="2">Rolando Pankow</option>
-    <option value="1">Arturo Serravalle</option>
-    <option value="3">Federico Parola</option>
-  </select>
-  <br>
-<input type="radio" name="ausen" value="Ape" /> no hay cargado nombre y apellido<br>
-<input type="radio" name="ausen" value="Dni" /> no hay dni<br>
-<input type="radio" name="ausen" value="Pat" /> veh&iacute;culo sin patente<br>
-<input type="radio" name="ausen" value="Valv" /> Verificados<br>
-<input type="radio" name="ausen" value="Valx" /> No corresponden o hay que verificar<br>
-<input type="radio" name="ausen" value="Valn" /> Sin verificar<br>
-<input type="radio" name="ausen" value="SinInf" /> Sin Infracci&oacute;n<br>
-<input type="radio" name="ausen" value="RetVehi" /> Vehiculo Retenido<br>
-<input type="radio" name="ausen" value="RetLice" /> Licencia Retenida<br>
-<input type="radio" name="ausen" value="ConEscri" /> Con Escrito<br>
----------------<br>
-<input type="radio" name="resol" value="ConRes" /> Resolucion Definitiva<br>
-<input type="radio" name="resol" value="SinRes" /> Sin Resolucion Definitiva<br>
----------------<br>
-<input name="obla" type="radio" value="S" />Obladas<br>
-<input name="obla" type="radio" value="N" />No Obladas<br>
-Desde<input type="date" name="bdate1"> - hasta <input type="date" name="bdate2"><br>
-Lugar de la Infracci�n <input type="text" name="domic"><br>  
-  <input type="submit" name="buscar" value="Filtrar" />
-  </div>
+  <div id="contenido">Lista de Causas<br>
+    <form action="site.php" method="get"><input name="search" type="search" autofocus autocomplete="off" id="search"
+        placeholder="ingresar algún criterio de busqueda" size="60"> B&uacute;squeda Avanzada <input name="oblada"
+        type="checkbox" id="oblada" title="Marcar si surge pago espontáneo del acta" value="S"
+        onchange="javascript:showContent()"><br>
+      <div id="contoblada" style="display: none; text-align: left; ">
+        Por Secretaria :
+        <select name="filt">
+          <option value="4">todas</option>
+          <option value="2">Rolando Pankow</option>
+          <option value="1">Arturo Serravalle</option>
+          <option value="3">Federico Parola</option>
+        </select>
+        <br>
+        <input type="radio" name="ausen" value="Ape" /> no hay cargado nombre y apellido<br>
+        <input type="radio" name="ausen" value="Dni" /> no hay dni<br>
+        <input type="radio" name="ausen" value="Pat" /> veh&iacute;culo sin patente<br>
+        <input type="radio" name="ausen" value="Valv" /> Verificados<br>
+        <input type="radio" name="ausen" value="Valx" /> No corresponden o hay que verificar<br>
+        <input type="radio" name="ausen" value="Valn" /> Sin verificar<br>
+        <input type="radio" name="ausen" value="SinInf" /> Sin Infracci&oacute;n<br>
+        <input type="radio" name="ausen" value="RetVehi" /> Vehiculo Retenido<br>
+        <input type="radio" name="ausen" value="RetLice" /> Licencia Retenida<br>
+        <input type="radio" name="ausen" value="ConEscri" /> Con Escrito<br>
+        ---------------<br>
+        <input type="radio" name="resol" value="ConRes" /> Resolucion Definitiva<br>
+        <input type="radio" name="resol" value="SinRes" /> Sin Resolucion Definitiva<br>
+        ---------------<br>
+        <input name="obla" type="radio" value="S" />Obladas<br>
+        <input name="obla" type="radio" value="N" />No Obladas<br>
+        Desde<input type="date" name="bdate1"> - hasta <input type="date" name="bdate2"><br>
+        Lugar de la Infracci�n <input type="text" name="domic"><br>
+        <input type="submit" name="buscar" value="Filtrar" />
+      </div>
 
-  </form>
-  <?php
+    </form>
+    <?php
   if (isset($_GET['inf'])) {
   echo 'Filtrado por: ' . $row_infracc['HIPOTESIS'];
 } ?><?php
   if (isset($_GET['search'])) {
   echo "Filtrado por: '" . $_GET['search'] . "'. ";
 } ?>
-<?php echo "P&aacute;gina Nº " . $pageNum_listadeexptes . " del reg. Nº " . $startRow_listadeexptes . " al "  . $startmax_listadeexptes .  " de " . $totalRows_listadeexptes . " registros."; ?><br>
-<table width="700" cellspacing="0" >
-    <tbody>
+    <?php echo "P&aacute;gina Nº " . $pageNum_listadeexptes . " del reg. Nº " . $startRow_listadeexptes . " al "  . $startmax_listadeexptes .  " de " . $totalRows_listadeexptes . " registros."; ?><br>
+    <table style="max-width: 100%;padding: 10px;width: 11000px;" cellspacing="0">
+      <tbody>
         <tr>
           <td colspan="5">
-          <table>
-          <tr>
-          <td style= "aling:center">
-          <?php if ($pageNum_listadeexptes >= 2) { ?><a href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, 0, $queryString_listadeexptes); ?>">Primero</a><?php } ?>
-          </td>
-          <td style= "aling:center">
-          <?php if ($pageNum_listadeexptes >= 1) { ?><a href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, max(0, $pageNum_listadeexptes - 1), $queryString_listadeexptes); ?>">Anterior</a><?php } ?>
-          </td>
-          <td style= "aling:center">
-          <?php if ($totalRows_listadeexptes >= 101) { ?><a href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, min($totalPages_listadeexptes, $pageNum_listadeexptes + 1), $queryString_listadeexptes); ?>">Siguiente</a><?php } ?>
-          </td>
-          <td style= "aling:center">
-          <?php if ($totalRows_listadeexptes >= 201) { ?><a href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, $totalPages_listadeexptes, $queryString_listadeexptes); ?>">Último</a><?php } ?>
-          </td>
-          <td style= "aling:center">
+            <table>
+              <tr>
+                <td style="aling:center">
+                  <?php if ($pageNum_listadeexptes >= 2) { ?><a
+                    href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, 0, $queryString_listadeexptes); ?>">Primero</a><?php } ?>
+                </td>
+                <td style="aling:center">
+                  <?php if ($pageNum_listadeexptes >= 1) { ?><a
+                    href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, max(0, $pageNum_listadeexptes - 1), $queryString_listadeexptes); ?>">Anterior</a><?php } ?>
+                </td>
+                <td style="aling:center">
+                  <?php if ($totalRows_listadeexptes >= 101) { ?><a
+                    href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, min($totalPages_listadeexptes, $pageNum_listadeexptes + 1), $queryString_listadeexptes); ?>">Siguiente</a><?php } ?>
+                </td>
+                <td style="aling:center">
+                  <?php if ($totalRows_listadeexptes >= 201) { ?><a
+                    href="<?php printf("%s?pageNum_listadeexptes=%d%s", $currentPage, $totalPages_listadeexptes, $queryString_listadeexptes); ?>">Último</a><?php } ?>
+                </td>
+                <td style="aling:center">
 
-          </td>
-          </tr>
-          </table>
+                </td>
+              </tr>
+            </table>
           </td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
@@ -245,49 +256,70 @@ Lugar de la Infracci�n <input type="text" name="domic"><br>
           <td>Infrac. Nº</td>
           <td>Infracciones Cometidas</td>
           <td>Infractor</td>
-          <td> OBSERVACIONES</td>
+          <td>OBSERVACIONES</td>
           <td>Retenciones</td>
           <td>OBLADA</td>
           <td>Cumplimiento</td>
         </tr>
-  <?php do { ?>
-        <tr class="lineas1" STYLE="background-color: <?php if ($row_listadeexptes['RES_DEFINI'] == 'S') { echo 'GREEN'; } ?>; ">
-          <td rowspan="2" align="right"><a href="personas/modinf.php?ID=<?php echo $row_listadeexptes['ID']; ?>"><?php echo $row_listadeexptes['ID']; ?></a><br><span style="font-size: 2em;"><?php echo $row_listadeexptes['EXPTE']; ?></span><br><?php echo date_format(date_create($row_listadeexptes['FECHASIEN']),'d/m/Y'); ?></td>
-          <td align="right" STYLE="background-color: <?php if ($row_listadeexptes['DNINOMCONST'] == 'V') { echo 'YELLOW'; } elseif ($row_listadeexptes['DNINOMCONST'] == 'N') { echo 'RED'; } elseif ($row_listadeexptes['DNINOMCONST'] == 'X') { echo 'ORANGE'; } ?>; ">&nbsp;<a href="exptes/expte.php?exp=<?php echo $row_listadeexptes['ID']; ?>"><img src="images/flechita.png" width="16" height="18" alt=""/></a></td>
+        <?php do { ?>
+        <tr class="lineas1"
+          STYLE="background-color: <?php if ($row_listadeexptes['RES_DEFINI'] == 'S') { echo 'GREEN'; } ?>; ">
+          <td rowspan="2" align="right"><a
+              href="personas/modinf.php?ID=<?php echo $row_listadeexptes['ID']; ?>"><?php echo $row_listadeexptes['ID']; ?></a><br><span
+              style="font-size: 2em;"><?php echo $row_listadeexptes['EXPTE']; ?></span><br><?php echo date_format(date_create($row_listadeexptes['FECHASIEN']),'d/m/Y'); ?>
+          </td>
+          <td align="right"
+            STYLE="background-color: <?php if ($row_listadeexptes['DNINOMCONST'] == 'V') { echo 'YELLOW'; } elseif ($row_listadeexptes['DNINOMCONST'] == 'N') { echo 'RED'; } elseif ($row_listadeexptes['DNINOMCONST'] == 'X') { echo 'ORANGE'; } ?>; ">
+            &nbsp;<a href="exptes/expte.php?exp=<?php echo $row_listadeexptes['ID']; ?>"><img src="images/flechita.png"
+                width="16" height="18" alt="" /></a></td>
+                <?php
+                //ACORTAR CADENA
+                $rest = substr($row_listadeexptes['INFRACCIONES'], 0, 280);
+                ?>
           <td align="right"><?php echo $row_listadeexptes['INFACTA']; ?></td>
-          <td colspan="2"><?php echo $row_listadeexptes['INFRACCIONES']; ?></td>
-          <td rowspan="2" style="width: 150px"><span style="width: 300px"><?php echo $row_listadeexptes['INFOBSER']; ?></span><br>
-          <?php if ($row_listadeexptes['RES_DEFINI'] == 'S') { ?><br>Resoluci&oacute;n: <?php } ?><?php echo $row_listadeexptes['RES_DEFININRO']; ?><br><?php echo $row_listadeexptes['RES_CUMPLI']; ?>
-          <?php if ($row_listadeexptes['ESCRITOS'] != NULL) { // Show if recordset not empty ?>
-              <?php echo $row_listadeexptes['ESCRITOS']; ?>
-  <?php } // Show if recordset not empty ?>
+          <td colspan="2"><?php echo  $rest; ?></td>
+          <td rowspan="2" style="width: 150px"><span
+              style="width: 300px"><?php echo $row_listadeexptes['INFOBSER']; ?></span><br>
+            <?php if ($row_listadeexptes['RES_DEFINI'] == 'S') { ?><br>Resoluci&oacute;n:
+            <?php } ?><?php echo $row_listadeexptes['RES_DEFININRO']; ?><br><?php echo $row_listadeexptes['RES_CUMPLI']; ?>
+            <?php if ($row_listadeexptes['ESCRITOS'] != NULL) { // Show if recordset not empty ?>
+            <?php echo $row_listadeexptes['ESCRITOS']; ?>
+            <?php } // Show if recordset not empty ?>
           </td>
           <td align="center"><?php if ($row_listadeexptes['RETLICE'] == 'S') { // Show if recordset not empty ?>
-              Licencia
-  <?php } // Show if recordset not empty ?></td>
+            Licencia
+            <?php } // Show if recordset not empty ?></td>
           <td align="center"><?php echo $row_listadeexptes['OBLADA']; ?></td>
-          <td rowspan="2" align="left" valign="top"> <?php echo $row_listadeexptes['RES_CUMPLI']; ?>&nbsp;<br><br>Resoluci&oacute;n: <?php echo $row_listadeexptes['RES_DEFININRO']; ?>
-          <?php if (isset($row_listadeexptes['RES_DEFININRO'])) { ?>Resoluci&oacute;n: xxx <?php } ?><?php echo $row_listadeexptes['RESTIPOS']; ?></td>
+          <td rowspan="2" align="left" valign="top">
+            <?php echo $row_listadeexptes['RES_CUMPLI']; ?>&nbsp;<br><br>Resoluci&oacute;n:
+            <?php echo $row_listadeexptes['RES_DEFININRO']; ?>
+            <?php if (isset($row_listadeexptes['RES_DEFININRO'])) { ?>Resoluci&oacute;n: xxx
+            <?php } ?><?php echo $row_listadeexptes['RESTIPOS']; ?></td>
         </tr>
-        <tr class="lineas2" STYLE="background-color: <?php if ($row_listadeexptes['RES_DEFINI'] == 'S') { echo 'GREEN'; } ?>; ">
+        <tr class="lineas2"
+          STYLE="background-color: <?php if ($row_listadeexptes['RES_DEFINI'] == 'S') { echo 'GREEN'; } ?>; ">
           <td>&nbsp;</td>
-          <td colspan="2">Datos de la Infracción:<br>Fecha: <?php echo date_format(date_create($row_listadeexptes['INFFECHA']),'d/m/Y'); ?><br>
+          <td colspan="2">Datos de la Infracción:<br>Fecha:
+            <?php echo date_format(date_create($row_listadeexptes['INFFECHA']),'d/m/Y'); ?><br>
             Hora: <?php echo date_format(date_create($row_listadeexptes['INFHORA']),'H:i'); ?><br>
-          Lugar: <?php echo $row_listadeexptes['INFLUG']; ?></td>
-          <td><p><span style="width: 300px"><span class="boton_calendario"><strong><?php echo $row_listadeexptes['APELLIDOS']; ?>
-                  <?php if ($row_listadeexptes['APELLIDOS'] != NULL) { // Show if recordset not empty ?>
-                  ,
-                  <?php } // Show if recordset not empty ?>
-                  <?php echo $row_listadeexptes['NOMBRES']; ?></strong></span><br>
-                  <?php echo $row_listadeexptes['DNI']; ?></span></p>
+            Lugar: <?php echo $row_listadeexptes['INFLUG']; ?></td>
+          <td>
+            <p><span style="width: 300px"><span
+                  class="boton_calendario"><strong><?php echo $row_listadeexptes['APELLIDOS']; ?>
+                    <?php if ($row_listadeexptes['APELLIDOS'] != NULL) { // Show if recordset not empty ?>
+                    ,
+                    <?php } // Show if recordset not empty ?>
+                    <?php echo $row_listadeexptes['NOMBRES']; ?></strong></span><br>
+                <?php echo $row_listadeexptes['DNI']; ?></span></p>
             <p>Datos del Vehículo:<br>
               <?php if ($row_listadeexptes['INFAUTOPAT'] <> NULL) { // Show if recordset not empty ?>
               Patente Nº
               <?php } // Show if recordset not empty ?><?php if($row_listadeexptes['INFAUTOPAT'] == NULL) { echo 'no hay datos'; } else { echo $row_listadeexptes['INFAUTOPAT']; } ?>
-          </p></td>
+            </p>
+          </td>
           <td><?php if ($row_listadeexptes['RETVEHI'] == 'S') { // Show if recordset not empty ?>
-              Vehículo
-  <?php } // Show if recordset not empty ?></td>
+            Vehículo
+            <?php } // Show if recordset not empty ?></td>
           <td><?php echo $row_listadeexptes['PASESS']; ?></td>
         </tr>
         <?php } while ($row_listadeexptes = mysql_fetch_assoc($listadeexptes)); ?>
@@ -305,8 +337,9 @@ Lugar de la Infracci�n <input type="text" name="domic"><br>
       </tbody>
     </table>
 
-</div>
+  </div>
 </body>
+
 </html>
 <?php
 mysql_free_result($listadeexptes);
