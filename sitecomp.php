@@ -217,7 +217,7 @@ $totalRows_infracc = mysql_num_rows($infracc);
   echo "Filtrado por: '" . $_GET['search'] . "'. ";
 } ?>
     <?php echo "P&aacute;gina Nº " . $pageNum_listadeexptes . " del reg. Nº " . $startRow_listadeexptes . " al "  . $startmax_listadeexptes .  " de " . $totalRows_listadeexptes . " registros."; ?><br>
-    <table style="max-width: 100%;padding: 10px;width: 11000px;" cellspacing="0">
+    <table style="max-width: 100%;padding: 10px;" cellspacing="0">
       <tbody>
         <tr>
           <td colspan="5">
