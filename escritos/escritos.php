@@ -70,6 +70,14 @@ $totalRows_escrito = mysql_num_rows($escrito);
 <head>
 <meta charset="utf-8">
 <title>Tribunal de Faltas - Escritos</title>
+    <link rel="stylesheet" href="../css/fontawesome58all.css">
+    <link rel="stylesheet" href="../css/fontgooglerobotocss.css">
+    <link href="../css/mdboostrap/bootstrap.css" rel="stylesheet">
+    <link href="../css/mdboostrap/mdb.css" rel="stylesheet">
+    <script type="text/javascript" src="../css/mdboostrap/js/jquery.js"></script>
+    <script type="text/javascript" src="../css/mdboostrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../css/mdboostrap/js/mdb.js"></script>
+
 <link href="../css/barra.css" rel="stylesheet" type="text/css">
 </head>
 <body>

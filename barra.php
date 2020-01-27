@@ -1,26 +1,20 @@
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Google Fonts -->
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-<!-- Bootstrap core CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
-<!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-<!--  
-<link href="css/mdbootstrap/bootstrap.css" rel="stylesheet">
+-->
+
+<link rel="stylesheet" href="css/fontawesome58all.css">
+<link rel="stylesheet" href="css/fontgooglerobotocss.css">
+<link href="css/mdboostrap/bootstrap.css" rel="stylesheet">
 <link href="css/mdboostrap/mdb.css" rel="stylesheet">
 <script type="text/javascript" src="css/mdboostrap/js/jquery.js"></script>
 <script type="text/javascript" src="css/mdboostrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="css/mdboostrap/js/mdb.js"></script>
- -->
 
 <script type="text/javascript">
 function showNav(el) { el.getElementsByTagName('UL')[0].style.left='auto'; }
@@ -29,7 +23,7 @@ function hideNav(el) { el.getElementsByTagName('UL')[0].style.left='-999em'; }
 
 
 <div class="quicklinks" id="wpcombar">
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand" href="#">Tribunal de faltas</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
