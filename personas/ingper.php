@@ -194,7 +194,7 @@ $totalRows_oppago = mysql_num_rows($oppago);
 <body>
 <?php include('../barra.php'); ?>
 <div id="contenido">
-    CARGAR DATOS DE LA INFRACCION<!--  Breadcrumb de Navegación (inicio) --> DE TRANSITO
+    <h5>CARGAR DATOS DE LA INFRACCION<!--  Breadcrumb de Navegación (inicio) --> DE TRANSITO</h5>
     <div class="breadCrumbHolder breadCrumbModule">
         <div id="breadCrumb0" class="breadCrumb breadCrumbModule">
         </div>
@@ -207,11 +207,11 @@ $totalRows_oppago = mysql_num_rows($oppago);
         <form name="formulario" id="formulario" action="<?php echo $editFormAction; ?>" method="POST">
             <div style="margin-left: auto;">
                 <fieldset class="ui-widget ui-widget-content ui-corner-all"
-                          style="width: 500px; margin-left: auto; margin-right: auto;">
+                          style="width: 250px; margin-left: auto; margin-right: auto;">
                     <legend class="ui-widget-header ui-corner-all ui-state-highlight" style="padding:1px 10px;"
                             id="grupoContacto">Datos de la Falta Cometida
                     </legend>
-                    <table width="400" border="0" cellspacing="1" class="formulario"
+                    <table width="800" border="0" cellspacing="1" class="formulario"
                            style="width: 95%; text-align: right;">
                         <tr>
                             <td style="width: 200px; text-align: right;"><label for="deporig">Seleccionar Dependencia de
@@ -424,8 +424,9 @@ $totalRows_oppago = mysql_num_rows($oppago);
 
             <table align="center" border="0">
                 <tr>
-                    <td><input type="button" name="button" id="button" value="Volver"></td>
-                    <td><input type="submit" name="submit" id="submit" value="Ingresar" tabindex="18"></td>
+                    <td><button type="button" name="button" id="button" onclick="history.back()" class="btn btn-danger btn-rounded">Volver</button></td>
+                    <td><button class="btn btn-success btn-rounded" type="submit" name="submit" id="submit">Ingresar infraccion</button></td>
+   
                 </tr>
             </table>
             <input type="hidden" name="MM_insert" value="formulario">

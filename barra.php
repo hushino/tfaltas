@@ -31,7 +31,7 @@ function hideNav(el) { el.getElementsByTagName('UL')[0].style.left='-999em'; }
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/tfaltas/personas/ingper.php">Igresar nueva infracción <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
